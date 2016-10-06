@@ -145,7 +145,7 @@ div.text_cell_render{
           },
           TeX: {
              extensions: ["AMSmath.js", "AMSsymbols.js", "begingroup.js","color.js"],
-             equationNumbers: { autoNumber: "all", useLabelIds: true }
+             equationNumbers: { autoNumber: "all"}
              },
           tex2jax: {
               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
