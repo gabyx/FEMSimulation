@@ -135,7 +135,6 @@ div.text_cell_render{
 }
 </style>
 <script>
-
   MathJax.Hub.Config({
           "HTML-CSS": {
               styles: {'.MathJax_Display': {"margin": 4}},
@@ -145,7 +144,22 @@ div.text_cell_render{
           },
           TeX: {
              extensions: ["AMSmath.js", "AMSsymbols.js", "begingroup.js","color.js"],
-             equationNumbers: { autoNumber: "all"}
+             equationNumbers: { autoNumber: "all" },
+             Augment: {
+               Definitions: {macros: {
+                 unitfrac: "myUnitFrac"
+               }},
+               Parse: {prototype: {
+                 myUnitFrac: function (name) {
+                   var n = this.GetBrackets(name),
+                       num = this.GetArgument(name),
+                       den = this.GetArgument(name);
+                   if (n == null) {n = ""}
+                   var tex = n + '\\,[\\text{'+num+'}/\\text{'+den+'}]';
+                   this.string = tex + this.string.slice(this.i); this.i = 0;
+                 }
+               }}
+             }
              },
           tex2jax: {
               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
