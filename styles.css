@@ -21,7 +21,7 @@ div.cell { /* set cell width */
 
 div #notebook { /* centre the content */
     background: #fff; /* white background for content */
-    width: 1000px;
+    width: 900px;
     margin: auto;
     padding-left: 0em;
 }
@@ -60,7 +60,7 @@ div.text_cell_render{
     font-family: 'Nixie One', serif;
     font-style:regular;
     font-weight: 400;    
-    font-size: 45pt;
+    font-size: 32pt;
     line-height: 100%;
     color: rgb(0,51,102);
     margin-bottom: 0.5em;
@@ -71,7 +71,7 @@ div.text_cell_render{
 .text_cell_render h2 {
     font-family: 'Nixie One', serif;
     font-weight: 400;
-    font-size: 30pt;
+    font-size: 28pt;
     line-height: 100%;
     color: rgb(0,51,102);
     margin-bottom: 0.1em;
@@ -117,6 +117,10 @@ div.text_cell_render{
     color: grey;
     margin-bottom: 1px;
     margin-top: 1px;
+}
+
+.text_cell_render p {
+    text-align: justify
 }
 
 .CodeMirror{
