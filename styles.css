@@ -175,8 +175,14 @@ div.text_cell_render{
 
 
 </style>
+
 <script>
+  
+
+  MathJax.Ajax.config.path["Contrib"] = "//cdn.mathjax.org/mathjax/contrib";
+
   MathJax.Hub.Config({
+          extensions: [ "[Contrib]/counters/counters.js" ],
           "HTML-CSS": {
               styles: {'.MathJax_Display': {"margin": 4}},
               availableFonts: ["Latin-Modern","TeX"],
@@ -206,18 +212,22 @@ div.text_cell_render{
               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
               displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
           },
-          displayAlign: 'center' // Change this to 'center' to center equations.
+          displayAlign: 'center' 
   });
+
+
+
+  
   
   $("<style type='text/css'> .cell.code_cell.collapse { max-height:30px; overflow:hidden;} </style>").appendTo("head");
-$('.prompt.input_prompt').on('click', function(event) {
-    console.log("CLICKED", arguments)   
-    var c = $(event.target.closest('.cell.code_cell'))
-    if(c.hasClass('collapse')) {
-        c.removeClass('collapse');
-    } else {
-        c.addClass('collapse');
-    }
-});
+  $('.prompt.input_prompt').on('click', function(event) {
+      console.log("CLICKED", arguments)   
+      var c = $(event.target.closest('.cell.code_cell'))
+      if(c.hasClass('collapse')) {
+          c.removeClass('collapse');
+      } else {
+          c.addClass('collapse');
+      }
+  });
   
 </script>
